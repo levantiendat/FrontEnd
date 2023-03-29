@@ -1,15 +1,15 @@
 package com.example.frontend;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 public class MainActivity extends AppCompatActivity {
 
-    Button btnsi,btnsu,btnpro,btnadpro,btnrp,btndetail,btntrade;
+    Button btnsi,btnsu,btnpro,btnadpro,btnrp,btndetail,btntrade,btnapi;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
         btnrp=(Button) findViewById(R.id.button5);
         btndetail=(Button) findViewById(R.id.button6);
         btntrade=(Button) findViewById(R.id.button7);
+        btnapi=(Button) findViewById(R.id.button8);
         btnsi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -67,6 +68,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent=new Intent(MainActivity.this,TradeProfileActivity.class);
+                startActivity(intent);
+            }
+        });
+        btnapi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(MainActivity.this,APIActivity.class);
                 startActivity(intent);
             }
         });
